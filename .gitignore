@@ -27,7 +27,7 @@ nb-configuration.xml
 .classpath
 .project
 .settings/
-web.xml
+*./web.xml
 
 # Intellij
 .idea/
