@@ -25,6 +25,28 @@ public class ToDo {
 		this.todoStatus = todoStatus;
 		this.owner = owner;
 	}
+	public ToDo(String id,String title, String description,Boolean todoStatus) {
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.todoStatus = todoStatus;		
+	}
+	public ToDo(String id,String title, String description, LocalDate todoDate, Boolean todoStatus) {
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.todoDate = todoDate;
+		this.todoStatus = todoStatus;		
+	}
+	
+	public ToDo(String title, String description, LocalDate todoDate, Boolean todoStatus) {
+		this.title = title;
+		this.description = description;
+		this.todoDate = todoDate;
+		this.todoStatus = todoStatus;		
+	}
+	
+	
 	
 	
 	
