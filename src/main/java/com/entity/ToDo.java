@@ -10,6 +10,23 @@ public class ToDo {
 	private Boolean todoStatus;
 	private User owner;
 
+	public ToDo(String id,String title, String description, LocalDate todoDate, Boolean todoStatus, User owner) {
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.todoDate = todoDate;
+		this.todoStatus = todoStatus;
+		this.owner = owner;
+	}
+	public ToDo(String id,String title, LocalDate todoDate, Boolean todoStatus, User owner) {
+		this.id = id;
+		this.title = title;
+		this.todoDate = todoDate;
+		this.todoStatus = todoStatus;
+		this.owner = owner;
+	}
+	
+	
 	
 	
 	public String getId() {
