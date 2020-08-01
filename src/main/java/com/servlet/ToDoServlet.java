@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.DBHelpers.DBManager;
 import com.entity.User;
 
 /**
@@ -15,20 +16,30 @@ import com.entity.User;
 @WebServlet("/user/tasks")
 public class ToDoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public ToDoServlet() {
-        super();
-    }
 
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
+	public ToDoServlet() {
+		super();
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doPost(request, response);
 	}
 
 	// This method provides ...
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		User owner = (User) request.getSession().getAttribute("user");
-		
+
+		DBManager dbm = (DBManager) getServletContext().getAttribute("TodoDBManager");
+
+		if (owner == null) {
+			// print message
+			// redirect login
+		} else {
+			// all process
+		}
+
 	}
 
 }
