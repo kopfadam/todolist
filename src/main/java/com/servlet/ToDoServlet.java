@@ -1,13 +1,17 @@
 package com.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.DBHelpers.DBManager;
+import com.helpers.DBManager;
+import com.dao.ToDoDao;
+import com.entity.ToDo;
 import com.entity.User;
 
 /**
@@ -33,13 +37,17 @@ public class ToDoServlet extends HttpServlet {
 
 		DBManager dbm = (DBManager) getServletContext().getAttribute("TodoDBManager");
 
-		if (owner == null) {
-			// print message
-			// redirect login
-		} else {
-			// all process
+		ArrayList<ToDo> todos = ToDoDao.getAllTodo(dbm, owner);
+		
+		if(todos.size()==0) {
+			String messageTask = "You don't have any task.";
+			request.setAttribute("messageTask",messageTask);
+		
+		}else {
+			request.setAttribute("todos", todos);
+					
 		}
-
+		request.getRequestDispatcher("tasks.jsp").forward(request, response);	
 	}
 
 }
