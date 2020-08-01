@@ -2,7 +2,7 @@ package com.dao;
 
 import java.sql.PreparedStatement;
 
-import com.DBHelpers.DBManager;
+import com.helpers.DBManager;
 import com.entity.User;
 
 public class RegisterDao {
