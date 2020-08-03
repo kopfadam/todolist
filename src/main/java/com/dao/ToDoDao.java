@@ -5,11 +5,38 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import com.helpers.DBManager;
-import com.helpers.DateConvert;
 import com.entity.ToDo;
 import com.entity.User;
 
 public class ToDoDao {
+	
+	public static ToDo getTodo(DBManager dbm, String id) {
+
+		ToDo todo = null;
+
+		try {
+			
+
+			String query = "select id,title,description,date,status,owner from todo where id =?";
+
+			PreparedStatement ps = dbm.getConnection().prepareStatement(query);
+
+			ps.setString(1, id);
+
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				
+				todo = new ToDo(rs.getString("title"),rs.getString("description"),DateConvert.getUtilDate(rs.getDate("date")),rs.getBoolean("status"));
+
+			}
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+
+		return todo;
+	}
 	
 	public static  ArrayList<ToDo> getAllTodo(DBManager dbm, User owner) {
 
