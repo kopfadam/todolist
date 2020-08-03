@@ -92,5 +92,27 @@ public class ToDoDao {
 		return success;
 
 	}
+	
+public static int deleteTodo(DBManager dbm, String id) {	
+		
+		int success = 0;
+
+		try {
+			
+			String query = "delete from todo where id = ?";
+
+			PreparedStatement ps = dbm.getConnection().prepareStatement(query);
+
+			ps.setString(1, id);
+
+			success = ps.executeUpdate();
+		
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+
+		return success;
+	}
 
 }
