@@ -10,11 +10,15 @@
 	<header>
 		<jsp:include page="/header.jsp"></jsp:include>
 	</header>
-	<main>
-	
-	
+	<main role="main" class="flex-shrink-0">
+		<div class="task-container mt-5">
+			<div class="row justify-content-between">
+			
+			
+			</div>
+		</div>
 	</main>
-	
+
 	<footer class="footer mt-auto py-3" style="background-color: #546e7a">
 		<jsp:include page="/footer.jsp"></jsp:include>
 	</footer>
