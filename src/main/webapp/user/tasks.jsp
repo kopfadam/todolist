@@ -13,6 +13,8 @@
 	<main role="main" class="flex-shrink-0">
 		<div class="task-container mt-5">
 			<div class="row justify-content-between">
+
+				<!-- Add Task Part -->
 				<div class="col-md-4 order-md-2 mb-4 mt-5 mr-5 ">
 					<h4 class="d-flex justify-content-between align-items-center mb-3">
 						<span class="text-muted">Add Task</span>
@@ -53,6 +55,7 @@
 					</form>
 				</div>
 
+				<!-- Your Tasks Part -->
 				<div class="mt-5  ml-5 col-md-6 order-md-1 ">
 					<h4 class="d-flex justify-content-between align-items-center mb-3">
 						<span class="text-muted">Your Tasks</span>
@@ -116,6 +119,7 @@
 	<footer class="footer mt-auto py-3" style="background-color: #546e7a">
 		<jsp:include page="/footer.jsp"></jsp:include>
 	</footer>
+
 	<!-- Modal part -->
 	<div class="modal fade" id="editModal" tabindex="-1" role="dialog"
 		aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -137,6 +141,17 @@
 	</div>
 	<c:remove var="counter" scope="request" />
 
-
+	<script>
+		function editTask(element) {
+			var id = element.getAttribute('id');
+			var url = 'edit?id=' + String(id);
+			console.log(id);
+			$('.modal-body').load(url, function() {
+				$('#editModal').modal({
+					show : true
+				});
+			});
+		}
+	</script>
 </body>
 </html>
