@@ -53,6 +53,61 @@
 					</form>
 				</div>
 
+				<div class="mt-5  ml-5 col-md-6 order-md-1 ">
+					<h4 class="d-flex justify-content-between align-items-center mb-3">
+						<span class="text-muted">Your Tasks</span>
+					</h4>
+
+					<hr class="mb-4">
+					<div>
+						<c:set var="counter" value="1" scope="page" />
+						<c:if test="${empty messageTask}">
+							<table class="table table-striped">
+								<thead class="thead-dark">
+									<tr>
+										<th scope="col">#</th>
+										<th scope="col">Title</th>
+										<th scope="col">Description</th>
+										<th scope="col">Date</th>
+										<th scope="col">Status</th>
+										<th scope="col">Edit</th>
+										<th scope="col">Delete</th>
+									</tr>
+								</thead>
+
+								<c:forEach items="${todos}" var="todo">
+									<tbody>
+										<tr>
+											<th scope="row">${counter}</th>
+											<td>${todo.title}</td>
+											<td>${todo.description}</td>
+											<td>${todo.todoDate}</td>
+											<td><c:set value="${todo.todoStatus}" var="bool" /> <c:out
+													value="${bool eq true ? 'Open': 'Close'}" /></td>
+
+											<td><button type="button" class="btn" id="${todo.id}"
+													onClick="editTask(this)">
+													<img alt="" src="/todo_app/images/pencil.png" width="32"
+														height="32">
+												</button></td>
+
+											<td><a href="delete?id=${todo.id}"><img alt=""
+													src="/todo_app/images/delete.png" width="32" height="32">
+											</a></td>
+									</tbody>
+									<c:set var="counter" value="${counter + 1}" scope="page" />
+								</c:forEach>
+							</table>
+						</c:if>
+
+						<c:if test="${not empty messageTask}">
+							<p>${messageTask}</p>
+
+						</c:if>
+					</div>
+
+				</div>
+
 
 			</div>
 		</div>
