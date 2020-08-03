@@ -5,11 +5,12 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Edit task</title> !-- Favicons -->
+<title>Edit task</title> 
+<!-- Favicons -->
 <meta name="theme-color" content="#563d7c">
 
-<!-- Custom styles for this template -- main style will come here -->
-
+<!-- Custom styles for this template -->
+<link href="/todolist/style.css" rel="stylesheet">
 <!-- jQuery library -->
 <script src="/todolist/bootstrap-4.5.0-dist/jquery/3.5.1/jquery.min.js"></script>
 <!-- Bootstrap core CSS -->
