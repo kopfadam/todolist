@@ -37,7 +37,7 @@
 
 		<c:if test="${not empty user}">
 			<ul class="navbar-nav mr-5">
-				<li class="nav-item"><p class="nav-link disabled"> <span> Hello ${user.getUserName()}</span></p></li>
+				<li class="nav-item"><p class="nav-link disabled"> <span> Hello ${user.getName()}</span></p></li>
 				<li class="nav-item"><a class="nav-link" href="/todolist/logout">Logout</a></li>
 			</ul>
 		</c:if>
