@@ -4,7 +4,47 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Insert title here</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" type="text/css"
+	href="/todo_app/bootstrap-4.5.0-dist/css/bootstrap.css" />
+
+<script src="/todo_app/bootstrap-4.5.0-dist/jquery-3.5.1.min.js"></script>
+<script src="/todo_app/bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+
+<title>Tasks</title>
+<style type="text/css">
+<style type ="text /css">body {
+	display: grid;
+	grid-template-columns: 1fr 5fr 1fr;
+	height: 720px;
+	width: 1500px;
+}
+
+#content {
+	display: grid;
+	grid-template-rows: 1fr 5fr 1fr;
+}
+
+div {
+	/*border: thin dashed black;*/
+	
+}
+
+<style>#tasksheader {
+	display: grid;
+	grid-template-columns: 2fr 5fr 1fr;
+}
+
+hr {
+	border-top: 1px solid green;
+}
+
+#formAdd {
+	background-color: #f5f5f5;
+}
+</style>
+
 </head>
 <body>
 	<header>
