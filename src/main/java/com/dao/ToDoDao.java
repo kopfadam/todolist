@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import com.helpers.DBManager;
+import com.helpers.DateConvert;
 import com.entity.ToDo;
 import com.entity.User;
 
@@ -63,6 +64,33 @@ public class ToDoDao {
 		}
 
 		return todos;
+	}
+	
+	public static int addTodo(DBManager dbm, ToDo todo) {
+		int success=0;
+
+		try {
+			
+
+			String query = "INSERT INTO todo(id,title, description, date, status, owner) VALUES (?, ?, ?, ?, ?, ?)";
+
+			PreparedStatement ps = dbm.getConnection().prepareStatement(query);
+
+			ps.setString(1, todo.getId());
+			ps.setString(2, todo.getTitle());
+			ps.setString(3, todo.getDescription());
+			ps.setDate(4, DateConvert.getSQLDate(todo.getTodoDate()));
+			ps.setBoolean(5, todo.getTodoStatus());
+			ps.setString(6, todo.getOwner().getEmail() );
+			
+			success= ps.executeUpdate();
+			
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+		return success;
+
 	}
 
 }
