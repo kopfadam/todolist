@@ -26,7 +26,7 @@ public class LoginDao {
 			while(rs.next()) {
 				//use BCrypt checkpw() method to check if hash values are same
 				if(BCrypt.checkpw(pass, rs.getString("password"))) {
-					user = new User(rs.getNString("name"), rs.getString("email"));
+					user = new User(rs.getString("name"), rs.getString("email"));
 				}
 			}
 		} catch (SQLException e) {

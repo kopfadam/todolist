@@ -1,16 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" type="text/css"
-	href="/todo_app/bootstrap-4.5.0-dist/css/bootstrap.css" />
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
 
-<script src="/todo_app/bootstrap-4.5.0-dist/jquery-3.5.1.min.js"></script>
-<script src="/todo_app/bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style type="text/css">
 
 <title>Tasks</title>
 <style type="text/css">
@@ -103,8 +109,9 @@ hr {
 
 					<hr class="mb-4">
 					<div>
-						<c:set var="counter" value="1" scope="page" />
+						
 						<c:if test="${empty messageTask}">
+						
 							<table class="table table-striped">
 								<thead class="thead-dark">
 									<tr>
@@ -117,8 +124,9 @@ hr {
 										<th scope="col">Delete</th>
 									</tr>
 								</thead>
-
+								<c:set var="counter" value="1" scope="page" />
 								<c:forEach items="${todos}" var="todo">
+								
 									<tbody>
 										<tr>
 											<th scope="row">${counter}</th>

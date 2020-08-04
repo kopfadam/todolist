@@ -15,7 +15,7 @@ import com.entity.ToDo;
 import com.entity.User;
 
 /**
- * Servlet implementation class ToDoServlet
+ * This servlet retrieves list of todo tasks from the database and sets list as an attribute to request scope if any task is exist
  */
 @WebServlet("/user/tasks")
 public class ToDoServlet extends HttpServlet {
