@@ -138,12 +138,12 @@ hr {
 
 											<td><button type="button" class="btn" id="${todo.id}"
 													onClick="editTask(this)">
-													<img alt="" src="/todo_app/images/pencil.png" width="32"
+													<img alt="" src="/todolist/images/pencil.png" width="32"
 														height="32">
 												</button></td>
 
 											<td><a href="delete?id=${todo.id}"><img alt=""
-													src="/todo_app/images/delete.png" width="32" height="32">
+													src="/todolist/images/delete.png" width="32" height="32">
 											</a></td>
 									</tbody>
 									<c:set var="counter" value="${counter + 1}" scope="page" />
