@@ -12,7 +12,7 @@ public class DBManager implements Serializable {
 
 	public DBManager(String url, String user, String pass) {
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(url, user, pass);
 		} catch (ClassNotFoundException | SQLException e) {
 		

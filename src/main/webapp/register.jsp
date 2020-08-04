@@ -76,7 +76,7 @@ body {
 	}
 }
 </style>
-<title>REGİSTER</title>
+<title>REGISTER</title>
 </head>
 <body class="text-center">
 	<form action="register" method="post" class="form-signup">

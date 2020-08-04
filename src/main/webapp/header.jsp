@@ -22,7 +22,7 @@
 					class="sr-only">(current)</span>
 			</a></li>
 			<c:if test="${not empty user}">
-			<li class="nav-item"><a class="nav-link" href="user/tasks">My Todos</a></li>
+			<li class="nav-item"><a class="nav-link" href="/todolist/user/tasks">My Todos</a></li>
 			</c:if>
 		</ul>
 		<c:if test="${empty user}">
